@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ReactReduxDemoApplication {
+public class SpringReactReduxExperimentApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ReactReduxDemoApplication.class, args);
+        SpringApplication.run(SpringReactReduxExperimentApplication.class, args);
     }
 
 }

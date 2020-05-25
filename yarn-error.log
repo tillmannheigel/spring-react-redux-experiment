@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  SyntaxError: /home/tillmannheigel/code/react-redux-demo/package.json: Unexpected token } in JSON at position 78
+  SyntaxError: /home/tillmannheigel/code/spring-react-redux-experiment/package.json: Unexpected token } in JSON at position 78
       at JSON.parse (<anonymous>)
       at /home/tillmannheigel/.yarn/lib/cli.js:1631:59
       at Generator.next (<anonymous>)
@@ -27,7 +27,7 @@ npm manifest:
       "react": "^16.13.1",
       "react-dom": "^16.13.1",
     },
-    "name": "react-redux-demo",
+    "name": "spring-react-redux-experiment",
     "version": "1.0.0",
     "main": "index.js",
     "license": "MIT"
