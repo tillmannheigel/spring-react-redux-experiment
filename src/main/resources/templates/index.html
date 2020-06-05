@@ -1,11 +1,29 @@
 <!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Title</title>
 </head>
 <body>
-Body
+<div id="table">
+    <table>
+        <thead>
+        <tr>
+            <th> Title</th>
+            <th> Author</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${books.empty}">
+            <td colspan="2"> No Books Available</td>
+        </tr>
+        <tr th:each="book : ${books}">
+            <td><span th:text="${book.title}"> Title </span></td>
+            <td><span th:text="${book.author}"> Author </span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 <script id="state" th:utext="${state}"></script>
 <script src="main.js" type="module"></script>
 </body>
