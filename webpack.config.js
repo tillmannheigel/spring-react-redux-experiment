@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    mode: "production",
+    mode: 'development',
     entry: "./src/main/webapp/WEB-INF/js/main.js",
     output: {
         path: path.resolve(__dirname, "./target/classes/static"),

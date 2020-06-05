@@ -1,18 +1,39 @@
 import $ from 'jquery';
+import React from 'react';
 import ReactDOM from "react-dom";
-import {createElement} from 'react';
-import {BookTable} from './components/book-table'
+import BookTable from './components/book-table'
+import {SortComponent} from './components/sort-component'
+import {createStore} from "redux";
+import {Provider} from "react-redux";
 
-class Main {
+console.log("Parse Server State")
+let state = JSON.parse($("#state")[0].innerText);
 
-    constructor() {
-        console.log("Start React");
-        let state = JSON.parse($("#state")[0].innerText);
-        console.log(state);
+console.log("Start Redux");
+let store = createStore(reducer);
+store.subscribe(() => console.log(store.getState()));
+store.dispatch({type: 'INITIALIZE'});
 
-        const bookTable = document.querySelector('#table');
-        ReactDOM.render(createElement(BookTable), bookTable);
+function reducer(oldState, action) {
+    switch (action.type) {
+        case 'INITIALIZE':
+            return state;
+        default:
+            return state;
     }
 }
 
-new Main();
+console.log("Start React");
+
+function App() {
+    return (
+        <Provider store={store}>
+            <SortComponent/>
+            <BookTable/>
+        </Provider>
+    );
+}
+
+ReactDOM.render(
+    <App/>,
+    document.getElementById('root'));

@@ -13,4 +13,6 @@ public class State {
     List<String> filters;
     @Builder.Default
     String sort = "default";
+    @Singular
+    List<Book> books;
 }

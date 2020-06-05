@@ -18,8 +18,9 @@ public class Controller {
 
     @GetMapping("/")
     public String index(Model model) throws JsonProcessingException {
-        State initialState = State.builder().build();
-        model.addAttribute("books", List.of(Book.builder().title("Buch 1").author("Autor 1").build(), Book.builder().title("Buch 2").author("Autor 2").build()));
+        List<Book> books = List.of(Book.builder().title("Buch 1").author("Autor 1").build(), Book.builder().title("Buch 2").author("Autor 2").build());
+        State initialState = State.builder().books(books).build();
+        model.addAttribute("books", books);
         model.addAttribute("state", OBJECT_MAPPER.writeValueAsString(initialState));
         return "index";
     }
